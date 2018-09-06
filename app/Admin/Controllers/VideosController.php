@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -10,7 +19,6 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-use FFMpeg\FFProbe;
 
 class VideosController extends Controller
 {
@@ -20,6 +28,7 @@ class VideosController extends Controller
      * Index interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function index(Content $content)
@@ -34,6 +43,7 @@ class VideosController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function show($id, Content $content)
@@ -48,6 +58,7 @@ class VideosController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function edit($id, Content $content)
@@ -61,6 +72,7 @@ class VideosController extends Controller
      * Create interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function create(Content $content)
@@ -77,7 +89,7 @@ class VideosController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Video);
+        $grid = new Grid(new Video());
 
         $grid->id('Id')->sortable();
         $grid->order('排序')->editable()->sortable();
@@ -98,7 +110,8 @@ class VideosController extends Controller
     /**
      * Make a show builder.
      *
-     * @param mixed   $id
+     * @param mixed $id
+     *
      * @return Show
      */
     protected function detail($id)
@@ -124,7 +137,7 @@ class VideosController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Video);
+        $form = new Form(new Video());
 
         $form->text('title', '标题');
 
@@ -139,7 +152,7 @@ class VideosController extends Controller
             ->move('videos')
             // ->rules('mimetypes:video/mp4,video/x-flv')
             ->name(function ($file) {
-                return md5(uniqid()) . '.' . $file->guessExtension();
+                return md5(uniqid()).'.'.$file->guessExtension();
             });
 
         $form->editor('body', '内容');

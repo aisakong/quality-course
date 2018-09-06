@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Controllers;
 
 use App\Category;
@@ -19,6 +28,7 @@ class TopicsController extends Controller
      * Index interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function index(Content $content)
@@ -47,7 +57,7 @@ class TopicsController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Topic);
+        $grid = new Grid(new Topic());
 
         $grid->id('Id')->sortable();
         $grid->title('标题')->limit(50);
@@ -93,7 +103,7 @@ class TopicsController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Topic);
+        $form = new Form(new Topic());
 
         $form->text('title', 'Title');
         $form->textarea('body', 'Body');

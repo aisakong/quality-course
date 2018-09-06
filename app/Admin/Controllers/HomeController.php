@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -17,7 +26,6 @@ class HomeController extends Controller
             ->description('Description...')
             ->row(Dashboard::title())
             ->row(function (Row $row) {
-
                 $row->column(4, function (Column $column) {
                     $column->append(Dashboard::environment());
                 });

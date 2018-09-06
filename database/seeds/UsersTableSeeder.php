@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -24,11 +33,10 @@ class UsersTableSeeder extends Seeder
         $users = factory(User::class)
             ->times(10)
             ->make()
-            ->each(function ($user, $index)
-                 use ($faker, $avatars) {
-                    // 从头像数组中随机取出一个并赋值
-                    $user->avatar = $faker->randomElement($avatars);
-                });
+            ->each(function ($user, $index) use ($faker, $avatars) {
+                // 从头像数组中随机取出一个并赋值
+                $user->avatar = $faker->randomElement($avatars);
+            });
 
         // 让隐藏字段可见，并将数据集合转换为数组
         $user_array = $users->makeVisible(['password', 'remember_token'])->toArray();

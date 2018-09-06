@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -23,8 +32,6 @@ class SyncPostViewCount extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -47,6 +54,6 @@ class SyncPostViewCount extends Command
 
         visits(Topic::class)->reset();
 
-        $this->info("同步成功！");
+        $this->info('同步成功！');
     }
 }

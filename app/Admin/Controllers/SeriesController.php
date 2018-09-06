@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Controllers;
 
 use App\Series;
@@ -18,6 +27,7 @@ class SeriesController extends Controller
      * Index interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function index(Content $content)
@@ -32,6 +42,7 @@ class SeriesController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function show($id, Content $content)
@@ -46,6 +57,7 @@ class SeriesController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function edit($id, Content $content)
@@ -59,6 +71,7 @@ class SeriesController extends Controller
      * Create interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function create(Content $content)
@@ -75,7 +88,7 @@ class SeriesController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Series);
+        $grid = new Grid(new Series());
 
         $grid->id('Id')->sortable();
         $grid->title('名称')->editable();
@@ -87,14 +100,15 @@ class SeriesController extends Controller
 
         $grid->disableExport();
         $grid->disableFilter();
-        
+
         return $grid;
     }
 
     /**
      * Make a show builder.
      *
-     * @param mixed   $id
+     * @param mixed $id
+     *
      * @return Show
      */
     protected function detail($id)
@@ -119,7 +133,7 @@ class SeriesController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Series);
+        $form = new Form(new Series());
 
         $form->text('title', '标题');
         $form->textarea('introduction', '简介');

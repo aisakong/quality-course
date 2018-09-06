@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Http\Controllers;
 
 use App\Handlers\ImageUploadHandler;
@@ -19,6 +28,7 @@ class UsersController extends Controller
     {
         $recent_topics = $user->topics()->with('category')->recent()->limit(8)->get();
         $recent_replies = $user->replies()->recent()->take(6)->with('topic')->get();
+
         return view('users.show', compact('user', 'recent_topics', 'recent_replies'));
     }
 
@@ -44,6 +54,7 @@ class UsersController extends Controller
         }
 
         $user->update($data);
+
         return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 
@@ -99,5 +110,4 @@ class UsersController extends Controller
 
         return view('users.replies', compact('replies', 'user'));
     }
-
 }

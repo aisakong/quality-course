@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Observers;
 
 use App\Reply;
@@ -14,7 +23,7 @@ class ReplyObserver
     {
         $reply->content = clean($reply->content, 'user_topic_body');
     }
-    
+
     public function created(Reply $reply)
     {
         $topic = $reply->topic;

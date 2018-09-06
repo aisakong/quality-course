@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -9,13 +18,11 @@ class AddTopicReferences extends Migration
     public function up()
     {
         Schema::table('topics', function (Blueprint $table) {
-
             // 当 user_id 对应的 users 表数据被删除时，删除词条
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         Schema::table('replies', function (Blueprint $table) {
-
             // 当 user_id 对应的 users 表数据被删除时，删除此条数据
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
@@ -35,6 +42,5 @@ class AddTopicReferences extends Migration
             $table->dropForeign(['user_id']);
             $table->dropForeign(['topic_id']);
         });
-
     }
 }

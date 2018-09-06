@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use App\Category;
 use App\Topic;
 use App\User;
@@ -21,14 +30,13 @@ class TopicsTableSeeder extends Seeder
         $topics = factory(Topic::class)
             ->times(100)
             ->make()
-            ->each(function ($topic, $index)
-                 use ($user_ids, $category_ids, $faker) {
-                    // 从用户 ID 数组中随机取出一个并赋值
-                    $topic->user_id = $faker->randomElement($user_ids);
+            ->each(function ($topic, $index) use ($user_ids, $category_ids, $faker) {
+                // 从用户 ID 数组中随机取出一个并赋值
+                $topic->user_id = $faker->randomElement($user_ids);
 
-                    // 话题分类，同上
-                    $topic->category_id = $faker->randomElement($category_ids);
-                });
+                // 话题分类，同上
+                $topic->category_id = $faker->randomElement($category_ids);
+            });
 
         // 将数据集合转换为数组，并插入到数据库中
         Topic::insert($topics->toArray());
