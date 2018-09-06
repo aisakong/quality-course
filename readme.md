@@ -1,9 +1,9 @@
 # Quality Course
 
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+![StyleCI build status](https://github.styleci.io/repos/147643527/shield) 
 
 ## 项目概述
-
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 - 产品名称：Quality Course
 - License：MIT
