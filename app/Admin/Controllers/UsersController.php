@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -18,6 +27,7 @@ class UsersController extends Controller
      * Index interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function index(Content $content)
@@ -32,6 +42,7 @@ class UsersController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function show($id, Content $content)
@@ -46,6 +57,7 @@ class UsersController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function edit($id, Content $content)
@@ -59,6 +71,7 @@ class UsersController extends Controller
      * Create interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function create(Content $content)
@@ -75,7 +88,7 @@ class UsersController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new User);
+        $grid = new Grid(new User());
 
         $grid->id('Id')->sortable();
         $grid->name('姓名')->sortable()->editable();
@@ -91,7 +104,6 @@ class UsersController extends Controller
         $grid->disableExport();
 
         $grid->filter(function ($filter) {
-
             // 去掉默认的id过滤器
             $filter->disableIdFilter();
 
@@ -100,7 +112,6 @@ class UsersController extends Controller
             $filter->like('college', '学院');
             $filter->like('major', '专业');
             $filter->like('class', '班级');
-
         });
 
         return $grid;
@@ -109,7 +120,8 @@ class UsersController extends Controller
     /**
      * Make a show builder.
      *
-     * @param mixed   $id
+     * @param mixed $id
+     *
      * @return Show
      */
     protected function detail($id)
@@ -137,7 +149,7 @@ class UsersController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new User);
+        $form = new Form(new User());
 
         $form->text('name', '用户名')->rules('required|min:2');
         $form->email('email', '邮箱')->rules('email');

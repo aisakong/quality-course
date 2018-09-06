@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Models\Traits;
 
 use App\Reply;
@@ -15,12 +24,16 @@ trait ActiveUserHelper
 
     // 配置信息
     protected $topic_weight = 4; // 话题权重
+
     protected $reply_weight = 1; // 回复权重
+
     protected $pass_days = 7; // 多少天内发表过内容
+
     protected $user_number = 6; // 取出来多少用户
 
     // 缓存相关配置
     protected $cache_key = 'tips_active_users';
+
     protected $cache_expire_in_minutes = 65;
 
     public function getActiveUsers()
@@ -65,7 +78,6 @@ trait ActiveUserHelper
 
             // 如果数据库里有该用户的话
             if ($user) {
-
                 // 将此用户实体放入集合的末尾
                 $active_users->push($user);
             }

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -17,6 +26,7 @@ class RepliesController extends Controller
      * Index interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function index(Content $content)
@@ -33,7 +43,7 @@ class RepliesController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Reply);
+        $grid = new Grid(new Reply());
 
         $grid->id('Id')->sortable();
         $grid->topic_id('话题ID')->sortable();
@@ -48,8 +58,8 @@ class RepliesController extends Controller
             $actions->disableView();
 
             $reply = $actions->row;
-            $url = route('topics.show', $reply['topic_id']) . '#reply' . $reply['id'];
-            $actions->prepend('<a href="' . $url . '" target="_blank"><i class="fa fa-eye"></i></a>');
+            $url = route('topics.show', $reply['topic_id']).'#reply'.$reply['id'];
+            $actions->prepend('<a href="'.$url.'" target="_blank"><i class="fa fa-eye"></i></a>');
         });
 
         $grid->filter(function ($filter) {
@@ -66,7 +76,7 @@ class RepliesController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Reply);
+        $form = new Form(new Reply());
 
         $form->number('topic_id', 'Topic id');
         $form->number('user_id', 'User id');

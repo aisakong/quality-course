@@ -1,10 +1,18 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Http\Controllers;
 
 use App\Category;
 use App\Handlers\ImageUploadHandler;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
 use App\Topic;
 use App\User;
@@ -50,6 +58,7 @@ class TopicsController extends Controller
     public function create(Topic $topic)
     {
         $categories = Category::all();
+
         return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
@@ -103,7 +112,7 @@ class TopicsController extends Controller
             // 图片保存成功的话
             if ($result) {
                 $data['filename'] = $result['path'];
-                $data['msg'] = "上传成功!";
+                $data['msg'] = '上传成功!';
                 $data['success'] = true;
             }
         }

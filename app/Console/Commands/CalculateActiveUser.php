@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Console\Commands;
 
 use App\User;
@@ -17,10 +26,10 @@ class CalculateActiveUser extends Command
     public function handle(User $user)
     {
         // 在命令行打印一行信息
-        $this->info("开始计算...");
+        $this->info('开始计算...');
 
         $user->calculateAndCacheActiveUsers();
 
-        $this->info("成功生成！");
+        $this->info('成功生成！');
     }
 }

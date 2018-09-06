@@ -1,13 +1,22 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTopicsTable extends Migration 
+class CreateTopicsTable extends Migration
 {
-	public function up()
-	{
-		Schema::create('topics', function(Blueprint $table) {
+    public function up()
+    {
+        Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->index();
             $table->text('body');
@@ -21,10 +30,10 @@ class CreateTopicsTable extends Migration
             $table->string('slug')->nullable();
             $table->timestamps();
         });
-	}
+    }
 
-	public function down()
-	{
-		Schema::drop('topics');
-	}
+    public function down()
+    {
+        Schema::drop('topics');
+    }
 }

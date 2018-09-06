@@ -1,9 +1,18 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use App\Admin\Extensions\Editor;
 use Encore\Admin\Form;
 
-/**
+/*
  * Laravel-admin - admin builder based on Laravel.
  * @author z-song <https://github.com/z-song>
  *

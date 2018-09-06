@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Admin\Extensions;
 
 use Encore\Admin\Form\Field;
@@ -25,7 +34,7 @@ class Editor extends Field
 
         $imgUploadUrl = route('topics.upload_image');
         $csrfToken = csrf_token();
-        
+
         $this->script = <<<EOT
 
         var simplemde = new SimpleMDE({ element: $("#editor")[0] });
@@ -61,6 +70,7 @@ class Editor extends Field
         });
 
 EOT;
+
         return parent::render();
     }
 }

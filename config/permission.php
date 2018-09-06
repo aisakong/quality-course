@@ -1,9 +1,16 @@
 <?php
 
+/*
+ * This file is part of the hui-ho/quality-course.
+ *
+ * (c) jiehui <hui-ho@outlook.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 return [
-
     'models' => [
-
         /*
          * When using the "HasRoles" trait from this package, we need to know which
          * Eloquent model should be used to retrieve your permissions. Of course, it
@@ -25,11 +32,9 @@ return [
          */
 
         'role' => Spatie\Permission\Models\Role::class,
-
     ],
 
     'table_names' => [
-
         /*
          * When using the "HasRoles" trait from this package, we need to know which
          * table should be used to retrieve your roles. We have chosen a basic
@@ -72,7 +77,6 @@ return [
     ],
 
     'column_names' => [
-
         /*
          * Change this if you want to name the related model primary key other than
          * `model_id`.
