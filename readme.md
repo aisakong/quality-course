@@ -1,11 +1,9 @@
 # Quality Course
 
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-
-适用于视频教学的播客网站应用。
-
 
 ## 项目概述
+
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 - 产品名称：Quality Course
 - License：MIT
