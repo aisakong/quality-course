@@ -1,0 +1,219 @@
+.series-index-page {
+    .series-card {
+        padding: 12px;
+        a {
+            position: relative;
+            display: block;
+        }
+        .series-card-thumbnail {
+            img {
+                border-radius: 3px;
+            }
+        }
+        .series-card-details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 25px 25px 20px;
+            width: 100%;
+            color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            opacity: 1;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            z-index: 10;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, .7);
+            -webkit-transition: opacity .6s;
+            transition: opacity .6s;
+            &:hover {
+                opacity: 0;
+                -webkit-transition: opacity 0.6s;
+                transition: opacity 0.6s;
+            }
+        }
+        .series-card-status {
+            margin-bottom: .6em;
+            margin-bottom: 0;
+            padding: 4px 5px;
+            color: #fff;
+            font-size: .8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            &.archived {
+                background-color: #3097D1;
+            }
+            &.updating {
+                background-color: #ef6733;
+            }
+        }
+        .series-card-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: #fff;
+            width: 100%;
+            height: 140%;
+        }
+        .series-card-smallest {
+            font-size: .7em;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            text-transform: uppercase;
+            p {
+                color: #919499;
+                font-weight: 700;
+                -webkit-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+        }
+    }
+}
+
+.series-show-page {
+    .navbar-static-top {
+        margin-bottom: 0;
+    }
+    .top {
+        ul {
+            list-style: none;
+            &>li {
+                padding-left: 2rem;
+                border-left: #ddd solid 1px;
+                float: left;
+                .key {
+                    font-size: 1.4rem;
+                    font-weight: lighter;
+                    color: #666;
+                    margin: 0 0 10px;
+                }
+                .value {
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: #00b5ad;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .body {
+        padding-top: 80px;
+        background-color: #fff;
+        .course-info {
+            h2 {
+                margin-bottom: 15px;
+                color: #00b5ad;
+                font-weight: bold;
+                font-size: 2.5rem;
+            }
+            hr {
+                margin: 40px 0;
+            }
+            ul {
+                padding-left: 10px;
+                list-style: none;
+                li {
+                    padding-top: 10px;
+                    border-bottom: 1px dashed #d7d7d7;
+                    .fa {
+                        font-size: 3rem;
+                        padding: 1.5rem 1rem;
+                        color: #52c4cf;
+                    }
+                    .title {
+                        color: #555;
+                        text-decoration: none;
+                        -webkit-transition: color .6s;
+                        transition: color .6s;
+                        span {
+                            color: #919499;
+                        }
+                        &:hover {
+                            color: #00b5ad;
+                            -webkit-transition: color .6s;
+                            transition: color .6s;
+                        }
+                    }
+                    h3 {
+                        margin-top: 5px;
+                        font-size: 2.1rem;
+                    }
+                    p {
+                        color: #919499;
+                    }
+                }
+            }
+        }
+        .siderbar {
+            padding-top: 30px;
+            .start-btn {
+                display: block;
+                width: 100%;
+                height: 50px;
+                background-color: #00b5ad;
+                color: #fff;
+                text-align: center;
+                font-size: 1.5rem;
+                line-height: 50px;
+                text-decoration: none;
+                -webkit-transition: background-color .6s;
+                transition: background-color .6s;
+                &:hover {
+                    background-color: #00b5ad;
+                    -webkit-transition: background-color .6s;
+                    transition: background-color .6s;
+                }
+            }
+            .update-info {
+                margin-top: 80px;
+                h4 {
+                    color: #00b5ad;
+                    font-weight: bold;
+                }
+            }
+            .other-course {
+                margin-top: 70px;
+                h4 {
+                    color: #00b5ad;
+                    font-weight: bold;
+                }
+                ul {
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        margin: 10px 0;
+                    }
+                    li>a {
+                        color: #555;
+                        text-decoration: none;
+                        -webkit-transition: color .6s;
+                        transition: color .6s;
+                        img {
+                            width: 100%
+                        }
+                        h5 {
+                            margin: 0 0 5px 0;
+                        }
+                        span {
+                            font-size: 12px;
+                            color: #919499
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

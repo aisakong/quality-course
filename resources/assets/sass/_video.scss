@@ -1,0 +1,90 @@
+.videos-show-page {
+    .player-panel {
+        padding: 4px;
+        #dplayer {
+            border-radius: 3px;
+        }
+    }
+    .article-panel {
+        .panel-heading {
+            color: #777;
+            .articlt-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .article-meta {
+                margin: 0 0 11px;
+                a {
+                    margin: 22px 0;
+                    color: #777;
+                    text-decoration: none;
+                    font-size: 0.9em;
+                }
+            }
+        }
+        .article-body {
+            padding: 0 10px;
+        }
+        @import "_article.scss";
+        .article-footer {
+            hr {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            p {
+                padding: 0 10px 10px 10px;
+            }
+        }
+    }
+    .list-panel {
+        .panel-heading h3 {
+            font-size: 22px;
+            margin: 15px 10px 0;
+            color: #777;
+        }
+        .panel-body ul {
+            list-style: none;
+            padding-left: 15px;
+            .item {
+                border-bottom: 1px dashed #d7d7d7;
+                font-weight: 700;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                padding: 10px 0;
+                .position {
+                    color: #00b5ad;
+                    padding-right: 1em;
+                    font-style: inherit;
+                    font-weight: inherit;
+                }
+                a {
+                    max-width: 205px;
+                    font-weight: 500;
+                    color: inherit;
+                    font-size: 16px;
+                    text-decoration: none;
+                    -webkit-transition: color .6s;
+                    transition: color .6s;
+                    &:hover {
+                        color: #00b5ad;
+                        -webkit-transition: color .6s;
+                        transition: color .6s;
+                    }
+                    &.active {
+                        color: #00b5ad;
+                    }
+                }
+                .length {
+                    color: #cacaca;
+                    margin-left: auto;
+                    font-style: inherit;
+                    font-weight: inherit;
+                }
+            }
+            .item:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

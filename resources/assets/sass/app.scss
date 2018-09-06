@@ -1,0 +1,204 @@
+// Variables
+@import "variables";
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+/* universal */
+
+body {
+    font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+}
+
+.panel {
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.09);
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.09);
+}
+
+/* header */
+
+.navbar-static-top {
+    border-color: #e7e7e7;
+    background-color: #fff;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .09);
+    border-top: 4px solid #00b5ad;
+    margin-bottom: 40px;
+    margin-top: 0px;
+    .dropdown-menu {
+        padding: 0px;
+        li a {
+            border-bottom: 1px solid #d8d8d8;
+            line-height: 2.4;
+            .glyphicon {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+/* 隐藏回到顶部的绿线 */
+
+#scrollUp-active {
+    display: none;
+}
+
+/* Notifications badge */
+
+.notifications-badge {
+    margin-top: -1;
+    .badge-fade {
+        background-color: #EBE8E8;
+    }
+    .badge-hint {
+        background-color: #d15b47 !important;
+        ;
+    }
+}
+
+/* Sticky footer styles */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #000;
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        p {
+            margin: 19px 0;
+            color: #c1c1c1;
+            a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+
+/* Root pages */
+
+@import "_root.scss";
+
+/* User register page */
+
+.register-page {
+    img.captcha {
+        margin-bottom: 0px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}
+
+/* User profile page */
+
+.users-show-page,
+.users-topics-page,
+.users-replies-page {
+    .user-info {
+        .thumbnail {
+            width: 112px;
+            height: 112px;
+            padding: 4px;
+            border-radius: 50%;
+            border: 1px solid #ddd
+        }
+        .media-heading {
+            margin: 10px 0px;
+        }
+        .item {
+            margin: 6px 0px;
+            .timeago {
+                color: #aaa;
+            }
+        }
+        .follow-info {
+            .counter {
+                color: #f4645f;
+                font-size: 25px;
+                display: block;
+                text-decoration: none;
+                text-align: center;
+            }
+            .text {
+                color: #999;
+                display: block;
+                text-decoration: none;
+                text-align: center;
+            }
+        }
+        .list-group {
+            a {
+                color: inherit;
+                text-decoration: none;
+                line-height: 24px;
+                &:hover {
+                    color: #00b5ad;
+                }
+                &.active {
+                    color: #00b5ad;
+                }
+            }
+        }
+    }
+    .recent-topic,
+    .all-topics {
+        .list-group {
+            margin-bottom: 0px;
+            padding-left: 0;
+            a {
+                color: inherit;
+                text-decoration: none;
+                line-height: 24px;
+                &:hover {
+                    color: #00b5ad;
+                }
+            }
+        }
+    }
+    .recent-reply {
+        .list-group-item {
+            a {
+                text-decoration: none;
+                line-height: 24px;
+            }
+            .reply-content {
+                margin: 6px 0;
+            }
+        }
+    }
+    .list-group {
+        .list-group-item {
+            border: none;
+            margin-bottom: 0px;
+            border-bottom: 1px solid #efefef;
+            padding: 10px 15px;
+            .meta {
+                font-size: .9em;
+                color: #b3b3b3;
+            }
+        }
+    }
+}
+
+/* Topic pages */
+
+@import "_topics.scss";
+/* Series pages */
+
+@import "_series.scss";
+/* Video pages */
+
+@import "_video.scss";
