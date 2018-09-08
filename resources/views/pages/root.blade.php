@@ -24,7 +24,7 @@
                 <div class="courses">
                     <a href="{{ route('series.show', $course) }}">
                         <div class="image">
-                            <img src="{{ env('APP_URL') }}/uploads/{{ $course->thumb }}" alt="{{ $course->title }}">
+                            <img src="{{ asset('/uploads/' . $course->thumb) }}" alt="{{ $course->title }}">
                         </div>
                         <h3>{{ $course->title }}{{ $course->title }}{{ $course->title }}</h3>
                     </a>

@@ -82,7 +82,7 @@
                                     <a href="">
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4 col-xs-4">
-                                                <img src="{{ env('APP_URL') }}/uploads/{{ $item->thumb }}" alt="" style="border-radius: 3px;">
+                                                <img src="{{ asset('/uploads/' . $item->thumb) }}" alt="" style="border-radius: 3px;">
                                             </div>
                                             <div class="col-md-8 col-sm-8 col-xs-8">
                                                 <h5>{{ $item->title }}</h5>

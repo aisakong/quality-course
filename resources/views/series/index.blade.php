@@ -17,7 +17,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 series-card">
                     <a href="{{ route('series.show', $item) }}">
                         <div clss="series-card-thumbnail">
-                            <img src="{{ env('APP_URL') }}/uploads/{{ $item->thumb }}" alt="{{ $item->title }}" class="img-responsive">
+                            <img src="{{ asset('/uploads/' . $item->thumb) }}" alt="{{ $item->title }}" class="img-responsive">
                         </div>
                         
                         <div class="series-card-details">
