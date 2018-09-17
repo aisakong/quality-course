@@ -1,21 +1,29 @@
 language: php
 
 php:
-  - 7.0
   - 7.1
   - 7.2
+
+env:
+  APP_ENV: testing
+  CACHE_DRIVER: array
+  SESSION_DRIVER: array
+  QUEUE_DRIVER: sync
+  DB_CONNECTION: sqlite
+  BROADCAST_DRIVER: log
+
+branches:
+  - master
 
 install: 
   - sudo add-apt-repository -y ppa:mc3man/trusty-media
   - sudo apt-get -qq update
   - sudo apt-get install -y ffmpeg
-  - composer install --no-interaction --prefer-source
-
-before_script:
-  - cp .env.travis .env
   - composer self-update
-  - composer install --no-interaction
+  - composer install --prefer-dist --no-interaction
 
 script:
-  - php artisan key:generate
-  - vendor/bin/phpunit
+  - composer test
+
+script:
+  - phpunit
