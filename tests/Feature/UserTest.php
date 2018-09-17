@@ -63,6 +63,7 @@ class UserTest extends TestCase
 
         // 页面能否正常访问
         $response = $this->get(route('users.show', $user));
+        $response->assertStatus(200);
 
         // 查看个人信息
         $response->assertSee($user->name);
