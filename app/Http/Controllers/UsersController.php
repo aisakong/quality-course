@@ -68,8 +68,12 @@ class UsersController extends Controller
                 'password' => 'required',
             ]);
 
-            $result = User::where('student_id', $request->input('student_id'))->first();
-            if ($result) {
+            $result = User::where([
+                ['student_id', '=', $request->input('student_id')],
+                ['student_id', '!=', $user->student_id],
+            ])->first();
+
+            if (count($result)) {
                 return back()->with('danger', '验证失败！该学号已被注册！');
             }
 
